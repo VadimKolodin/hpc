@@ -22,8 +22,8 @@
 2048х2048	| 2048х2048	| 286,343					| 134558,527
 
 
-![] (https://github.com/VadimKolodin/hpc/blob/main/matmul/cpu.png?raw=true)
-![] (https://github.com/VadimKolodin/hpc/blob/main/matmul/gpu.png?raw=true)
+![CPU](https://github.com/VadimKolodin/hpc/blob/main/matmul/cpu.png?raw=true)
+![GPU](https://github.com/VadimKolodin/hpc/blob/main/matmul/gpu.png?raw=true)
 
 
 Из таблицы видно, что рост времени выполнения с увеличением размера для CPU более чем кубический, что обсуловлено вычислительной сложностью алгоритма ijk - O(n^3). 
@@ -36,7 +36,7 @@
 Более того, вспомогательные операции тут не играют большой роли, из-за того, что их не так много 
 (если представить, что весь алгоритм, это подсчет одного элемента, при условии выполнения всех нитей одновременно).
 
-![] (https://github.com/VadimKolodin/hpc/blob/main/matmul/acceleration.png?raw=true)
+![Ускорение](https://github.com/VadimKolodin/hpc/blob/main/matmul/acceleration.png?raw=true)
 
 График ускорения выглядит линейно, из-за стабильного роста времени выполнения с ростом количества элементов, как для параллельной, так и последовательной программы.
 
