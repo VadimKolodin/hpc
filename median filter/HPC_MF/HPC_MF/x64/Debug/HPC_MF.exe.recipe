@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\x64\Debug\HPC_MF.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\HPC_MF\utils.h</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
