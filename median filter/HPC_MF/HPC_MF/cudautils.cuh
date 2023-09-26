@@ -8,7 +8,7 @@ void handle_cuda_result(cudaError_t cuerr, char msg[]);
  @ gpuMatPointer - указатель на массив с развернутой матрицей, куда будет загружена матрица (память должная быть выделена)
  @ size - размер развернутой матрицы
 */
-void download_from_device(int* gpuMatPointer, int* resultMat, int size);
+void download_from_device(unsigned char* gpuMatPointer, unsigned char* resultMat, int size);
 
 /*
  Загрузка данных на GPU
@@ -17,11 +17,11 @@ void download_from_device(int* gpuMatPointer, int* resultMat, int size);
  @ in - указатель на массив с развернутой матрицей
  @ n, m - размеры развернутой матрицы
 */
-void upload_to_device(cudaArray** cudaArray, cudaChannelFormatDesc& channelDesc, int* in, int n, int m);
+void upload_to_device(cudaArray** cudaArray, cudaChannelFormatDesc& channelDesc, unsigned char* in, int n, int m);
 
 /*
  Выделение памяти на GPU
  @ resultGpuPointer - перезаписывается, указатель на указатель на память GPU (чтобы значение указателя сохранялось)
  @ size - размер выделяемой памяти
 */
-void allocate_in_device(int** resultGpuPointer, int size);
+void allocate_in_device(unsigned char** resultGpuPointer, int size);

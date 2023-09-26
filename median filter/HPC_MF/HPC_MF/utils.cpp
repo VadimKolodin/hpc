@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <EasyBMP.h>
 
-void random_image(int** out, int height, int width) {
+void random_image(unsigned char** out, int height, int width) {
 	srand(time(NULL));
-	int* output = new int[width * height];
+	unsigned char* output = new unsigned char[width * height];
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++) {
 			output[i * width + j] = i*j/4;
@@ -15,15 +15,15 @@ void random_image(int** out, int height, int width) {
 	*out = output;
 }
 
-void load_image(int** out, int& height, int& width, char filename[]) {
+void load_image(unsigned char** out, int& height, int& width, char filename[]) {
 	BMP image;
 	image.ReadFromFile(filename);
 	width = image.TellWidth();
 	height = image.TellHeight();
-	int* output = new int[width * height];
+	unsigned char* output = new unsigned char[width * height];
 	for (int i = 0; i < image.TellHeight(); i++) {
 		for (int j = 0; j < image.TellWidth(); j++) {
-			output[i * width + j] = (int)floor(0.299 * image(j, i)->Red +
+			output[i * width + j] = (unsigned char)floor(0.299 * image(j, i)->Red +
 				0.587 * image(j, i)->Green +
 				0.114 * image(j, i)->Blue);
 		}
@@ -31,7 +31,7 @@ void load_image(int** out, int& height, int& width, char filename[]) {
 	*out = output;
 }
 
-void save_image(int* in, int height, int width, char filename[]) {
+void save_image(unsigned char* in, int height, int width, char filename[]) {
 	BMP image;
 	image.SetSize(width, height);
 	width = image.TellWidth();
@@ -53,9 +53,9 @@ void save_image(int* in, int height, int width, char filename[]) {
 }
 
 
-void add_noise(int* in, int** out, int height, int width, double noise_percent) {
+void add_noise(unsigned char* in, unsigned char** out, int height, int width, double noise_percent) {
 	srand(time(NULL));
-	int* output = new int[width * height];
+	unsigned char* output = new unsigned char[width * height];
 	int noise_pixels_count = noise_percent * width * height;
 	for (int i = 0; i < height; ++i) {
 		for (int j = 0; j < width; ++j) {

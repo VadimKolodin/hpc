@@ -15,23 +15,23 @@ void handle_cuda_result(cudaError_t cuerr, char msg[]) {
     }
 }
 
-void upload_to_device(cudaArray** cudaArray, cudaChannelFormatDesc& channelDesc, int* in, int n, int m) {
+void upload_to_device(cudaArray** cudaArray, cudaChannelFormatDesc& channelDesc, unsigned char* in, int n, int m) {
     cudaError_t cuerr;
     cuerr = cudaMallocArray(cudaArray, &channelDesc, m, n);
     handle_cuda_result(cuerr, "Cannot allocate memory for array");
-    cuerr = cudaMemcpyToArray(*cudaArray, 0, 0, in, sizeof(int) * n * m, cudaMemcpyHostToDevice);
+    cuerr = cudaMemcpyToArray(*cudaArray, 0, 0, in, sizeof(unsigned char) * n * m, cudaMemcpyHostToDevice);
     handle_cuda_result(cuerr, "Cannot copy to device");
 }
 
-void allocate_in_device(int** resultGpuPointer, int size) {
-    int sizeInBytes = size * sizeof(int);
+void allocate_in_device(unsigned char** resultGpuPointer, int size) {
+    int sizeInBytes = size * sizeof(unsigned char);
     // выделяем память
     cudaError_t cuerr = cudaMalloc((void**)resultGpuPointer, sizeInBytes);
     handle_cuda_result(cuerr, "Cannot allocate device array");
 }
 
-void download_from_device(int* gpuMatPointer, int* resultMat, int size) {
-    int sizeInBytes = size * sizeof(int);
+void download_from_device(unsigned char* gpuMatPointer, unsigned char* resultMat, int size) {
+    int sizeInBytes = size * sizeof(unsigned char);
     // копируем массив
     cudaError_t cuerr = cudaMemcpy(resultMat, gpuMatPointer, sizeInBytes, cudaMemcpyDeviceToHost);
     handle_cuda_result(cuerr, "Cannot copy a array from device to host");

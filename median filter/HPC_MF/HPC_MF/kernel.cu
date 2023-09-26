@@ -14,10 +14,10 @@
 
 using namespace std;
 
-texture<int, 2, cudaReadModeElementType> tex;
+texture<unsigned char, 2, cudaReadModeElementType> tex;
 
-__device__ void bubble_sort(int* array, int n) {
-    int i, j, temp;
+__device__ void bubble_sort(unsigned char* array, int n) {
+    int i, j; unsigned char temp;
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - i - 1; j++) {
             if (array[j] > array[j + 1]) {
@@ -32,8 +32,8 @@ __device__ void bubble_sort(int* array, int n) {
 /*
  Фильтрация медианным фильтром
 */
-__global__ void kernel(int* out, int n, int m, int k, int sharedArrayOffsetScale) {
-    extern __shared__ int sharedArray[];
+__global__ void kernel(unsigned char* out, int n, int m, int k, int sharedArrayOffsetScale) {
+    extern __shared__ unsigned char sharedArray[];
 
     int i = blockIdx.x * blockDim.x + threadIdx.x;
     int j = blockIdx.y * blockDim.y + threadIdx.y;
@@ -65,9 +65,9 @@ __global__ void kernel(int* out, int n, int m, int k, int sharedArrayOffsetScale
 }
 
 void count_cuda_dims(dim3& blocksPerGrid, dim3& threadsPerBlock, int n, int m) {
-    // максимум потоков в блоке - 1024
-    int xthreadsPerBlock = n < 32 ? n : 32;
-    int ythreadsPerBlock = m < 32 ? m : 32;
+    // максимум потоков в блоке - 1024, но тогда может не хватить памяти на буфер, поэтому ограничиваемся 512
+    int xthreadsPerBlock = n < 16 ? n : 16;
+    int ythreadsPerBlock = m < 16 ? m : 16;
     // дальше считаем кличесто блоков. С учетом ограничений по заданию не упремся в лимит точно (там что-то типа 65К)
     int xblocksPerGrid = ceil((float)n / xthreadsPerBlock);
     int yblocksPerGrid = ceil((float)m / ythreadsPerBlock);
@@ -81,19 +81,19 @@ void count_cuda_dims(dim3& blocksPerGrid, dim3& threadsPerBlock, int n, int m) {
 /*
   Фильтрация иображения in(n, m) с помощью медианного фильтра
 */
-double filter_gpu(int* in, int** out, int n, int m, int kernel_size) {
+double filter_gpu(unsigned char* in, unsigned char** out, int n, int m, int kernel_size) {
     cudaError_t cuerr;
     // Выделение памяти на устройстве
-    int* outGpuPointer;
+    unsigned char* outGpuPointer;
     cudaArray* inCudaArray;
-    cudaChannelFormatDesc channelDesc = cudaCreateChannelDesc<int>();
+    cudaChannelFormatDesc channelDesc = cudaCreateChannelDesc<unsigned char>();
     int k = (kernel_size - 1) / 2;
 
     allocate_in_device(&outGpuPointer, n * m);
     upload_to_device(&inCudaArray, channelDesc, in, n, m);
   
     cuerr = cudaBindTextureToArray(&tex, inCudaArray, &channelDesc);
-    handle_cuda_result(cuerr, "Cannot create CUDA start event");
+    handle_cuda_result(cuerr, "Cannot bind texture");
 
     // Создание обработчиков событий
     cudaEvent_t start, stop;
@@ -104,17 +104,17 @@ double filter_gpu(int* in, int** out, int n, int m, int kernel_size) {
     cuerr = cudaEventCreate(&stop);
     handle_cuda_result(cuerr, "Cannot create CUDA stop event");
 
-    cuerr = cudaEventRecord(start, 0);
-    handle_cuda_result(cuerr, "Cannot record CUDA start event");
-
     dim3 blocksPerGrid, threadsPerBlock;
     count_cuda_dims(blocksPerGrid, threadsPerBlock, n, m);
 
     int sharedArrayOffsetScale = kernel_size * kernel_size;
     int bufSize = sharedArrayOffsetScale * threadsPerBlock.x * threadsPerBlock.y;
+
+    cuerr = cudaEventRecord(start, 0);
+    handle_cuda_result(cuerr, "Cannot record CUDA start event");
     
     // Запуск ядра
-    kernel<<<blocksPerGrid, threadsPerBlock, bufSize * sizeof(int)>>>(outGpuPointer, n, m, k, sharedArrayOffsetScale);
+    kernel<<<blocksPerGrid, threadsPerBlock, bufSize * sizeof(unsigned char)>>>(outGpuPointer, n, m, k, sharedArrayOffsetScale);
     handle_cuda_result(cudaGetLastError(), "Cannot launch CUDA kernel");
 
     // Синхронизация устройств
@@ -126,13 +126,15 @@ double filter_gpu(int* in, int** out, int n, int m, int kernel_size) {
     handle_cuda_result(cuerr, "Cannot record CUDA stop event");
 
     // Копирование результата на хост
-    *out = new int[n * m];
+    *out = new unsigned char[n * m];
     download_from_device(outGpuPointer, *out, n*m);
 
     cuerr = cudaEventElapsedTime(&gpuTime, start, stop);
     handle_cuda_result(cuerr, "Cannot get elapsed time");
     double time = gpuTime / 1000;
 
+    cuerr = cudaUnbindTexture(&tex);
+    handle_cuda_result(cuerr, "Cannot unbind texture");
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
     cudaFree(inCudaArray);
@@ -141,12 +143,12 @@ double filter_gpu(int* in, int** out, int n, int m, int kernel_size) {
 }
 
 
-int comp(const int* a, const int* b) {
+int comp(const unsigned char* a, const unsigned char* b) {
     return *a - *b;
 }
 
-double filter_cpu(int* in, int** out, int n, int m, int kernel_size) {
-    int* output = new int[n * m];
+double filter_cpu(unsigned char* in, unsigned char** out, int n, int m, int kernel_size) {
+    unsigned char* output = new unsigned char[n * m];
     int kernel = (kernel_size - 1) / 2;
 
     double time = clock();
@@ -160,7 +162,7 @@ double filter_cpu(int* in, int** out, int n, int m, int kernel_size) {
             
             int cn = (maxi - mini) + 1;
             int cm = (maxj - minj) + 1;
-            int* temp_array = new int[cn*cm];
+            unsigned char* temp_array = new unsigned char[cn*cm];
 
             for (int ci = 0; ci < cn; ++ci) {
                 for (int cj = 0; cj < cm; ++cj) {
@@ -170,7 +172,7 @@ double filter_cpu(int* in, int** out, int n, int m, int kernel_size) {
             }
 
             // сортируем для получения медианы
-            qsort(temp_array, cn * cm, sizeof(int), (int(*) (const void*, const void*)) comp);
+            qsort(temp_array, cn * cm, sizeof(unsigned char), (int(*) (const void*, const void*)) comp);
             output[i * m + j] = temp_array[cn * cm / 2];
             delete[] temp_array;
         }
@@ -185,22 +187,22 @@ double filter_cpu(int* in, int** out, int n, int m, int kernel_size) {
 
 void test_real_image() {
     int height, width;
-    int* image;
+    unsigned char* image;
     int filter_size = 3;
     load_image(&image, height, width, "mushroom.bmp");
 
-    int* image_with_noise;
+    unsigned char* image_with_noise;
     add_noise(image, &image_with_noise, height, width, 0.1);
     save_image(image_with_noise, height, width, "image_with_noise.bmp");
     delete[] image;
 
-    int* image_filtered_cpu;
+    unsigned char* image_filtered_cpu;
     float time_cpu = filter_cpu(image_with_noise, &image_filtered_cpu, height, width, filter_size);
     save_image(image_filtered_cpu, height, width, "image_filtered_cpu.bmp");
     delete[] image_filtered_cpu;
     printf("time cpu: %f\n", time_cpu);
 
-    int* image_filtered_gpu;
+    unsigned char* image_filtered_gpu;
     float time_gpu = filter_gpu(image_with_noise, &image_filtered_gpu, height, width, filter_size);
     save_image(image_filtered_gpu, height, width, "image_filtered_gpu.bmp");
     delete[] image_filtered_gpu;
@@ -210,23 +212,23 @@ void test_real_image() {
 }
 
 void test_fake_image() {
-    int height = 2160, width = 3840;
-    int* image;
+    int height = 1080, width = 1920;
+    unsigned char* image;
     int filter_size = 3;
     random_image(&image, height, width);
     save_image(image, height, width, "random.bmp");
 
-    int* image_with_noise;
+    unsigned char* image_with_noise;
     add_noise(image, &image_with_noise, height, width, 0.1);
     save_image(image_with_noise, height, width, "random_with_noise.bmp");
 
-    int* image_filtered_cpu;
+    unsigned char* image_filtered_cpu;
     float time_cpu = filter_cpu(image_with_noise, &image_filtered_cpu, height, width, filter_size);
     save_image(image_filtered_cpu, height, width, "random_filtered_cpu.bmp");
     delete[] image_filtered_cpu;
     printf("time cpu: %f\n", time_cpu);
 
-    int* image_filtered_gpu;
+    unsigned char* image_filtered_gpu;
     float time_gpu = filter_gpu(image_with_noise, &image_filtered_gpu, height, width, filter_size);
     save_image(image_filtered_gpu, height, width, "random_filtered_gpu.bmp");
     delete[] image_filtered_gpu;
