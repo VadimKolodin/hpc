@@ -34,16 +34,16 @@
 На изображение был наложен шум соли и перца, 10% пикселей изображения были подвержены искажению.
 
 Исходное черно-бело изображение
-![грибы чб](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/mushroom_grayscale.bmp?raw=true)
+![грибы чб](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/mushroom_grayscale.bmp)
 
 Изображение с шумом
-![грибы чб шум](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_with_noise.bmp?raw=true)
+![грибы чб шум](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/image_with_noise.bmp)
 
 Изображение, отфильтрованное последовательной программой
-![грибы чб отфильрованное cpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_cpu.bmp?raw=true)
+![грибы чб отфильрованное cpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/image_filtered_cpu.bmp)
 
 Изображение, отфильтрованное параллельной программой
-![грибы чб отфильрованное gpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_gpu.bmp?raw=true)
+![грибы чб отфильрованное gpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/image_filtered_gpu.bmp)
 
 # Эксперименты 2
 Для проведения экспериментов со сревнением времени выполнения параллельной и последовательных программ была создана функция, которая генерирует изображение с заданными высотой и шириной.
@@ -52,11 +52,17 @@
 Время представлено усредненное по 36 запускам. 
 
 Характеристики ПК
+
 Процессор 			 intel core i7-13700K
+
 Количество ядер		 16
+
 Количество потоков 	 24
+
 Оперативная память 	 32 ГБ DDR5
+
 Видеокарта			 NVIDIA GTX 1650
+
 Тип системы	Windows  10
 
 
@@ -69,8 +75,8 @@
 2560 × 1440	   		| 23,6    					| 959						| 40,63
 3840 × 2160  		| 44,3	   					| 2141						| 48,32
 
-![время от разрешения, сравнение](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/resolution_compare.png?raw=true)
-![время от разрешения, ускорение](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/resolution_acceleration.png?raw=true)
+![время от разрешения, сравнение](resolution_compare.png)
+![время от разрешения, ускорение](resolution_acceleration.png)
 
 Из графика и таблиы видно, что как для последовательной программы, так и для параллельной время увеличивается примерно в 2 раза с каждым шагом, что ожидаемо,
 поскольку общее количество элементов с каждым увеличением разрешения становится примерно в 2 раза больше. Тем не менее, рост времни выполнения с ростом разрешения у параллельной программы замедляется.
@@ -86,8 +92,8 @@
 7 × 7	   		| 220,3    					| 4'025                    | 18,27
 9 × 9  			| 751,5						| 7'130                    | 9,48
 
-![время от фильтра, сравнение](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/filter_compare.png?raw=true)
-![время от фильтра, ускорение](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/filter_acceleration.png?raw=true)
+![время от фильтра, сравнение](filter_compare.png)
+![время от фильтра, ускорение](filter_acceleration.png)
 
 Для таблицы графика, отражающей зависимость времени выоплнения от размера фильтра, видно, что время выполнения растет быстрее, чем размер фильтра.
 Данное являение сильнее заметно для параллельной программы. Это обусловлено тремя факторами:
