@@ -34,16 +34,16 @@
 На изображение был наложен шум соли и перца, 10% пикселей изображения были подвержены искажению.
 
 Исходное черно-бело изображение
-![грибы чб](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/mushroom_grayscale.png?raw=true)
+![грибы чб](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/mushroom_grayscale.bmp?raw=true)
 
 Изображение с шумом
-![грибы чб шум](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_with_noise.png?raw=true)
+![грибы чб шум](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_with_noise.bmp?raw=true)
 
 Изображение, отфильтрованное последовательной программой
-![грибы чб отфильрованное cpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_cpu.png?raw=true)
+![грибы чб отфильрованное cpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_cpu.bmp?raw=true)
 
 Изображение, отфильтрованное параллельной программой
-![грибы чб отфильрованное gpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_gpu.png?raw=true)
+![грибы чб отфильрованное gpu](https://github.com/VadimKolodin/hpc/tree/main/median%20filter/image_filtered_gpu.bmp?raw=true)
 
 # Эксперименты 2
 Для проведения экспериментов со сревнением времени выполнения параллельной и последовательных программ была создана функция, которая генерирует изображение с заданными высотой и шириной.
