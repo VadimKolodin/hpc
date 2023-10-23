@@ -1,0 +1,84 @@
+﻿C:\Program Files\Programming\Visual Studio 2019\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (HPC_MF.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Compiling CUDA source file kernel.cu...
+  
+  D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\bilateral\HPC_BF\HPC_BF>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Programming\Visual Studio 2019\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64" -x cu   -I"D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\HPC_MF\EasyBMP" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\bilateral\HPC_BF\HPC_BF\kernel.cu" 
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(98): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(104): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(107): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(113): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(117): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(121): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(125): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(132): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(136): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(195): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(199): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(205): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(216): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(220): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(226): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(98): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(104): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(107): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(113): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(117): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(121): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(125): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(132): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(136): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(146): warning : a __constant__ variable "DOUBLE_SIGMA_SQUARE" cannot be directly read in a host function
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(146): warning : a __constant__ variable "COEF1" cannot be directly read in a host function
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(195): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(199): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(205): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(216): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(220): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(226): warning : conversion from a string literal to "char *" is deprecated
+  
+  kernel.cu
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(19): warning C4305: инициализация: усечение из "double" в "float"
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(74): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(75): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(97): warning C4996: 'cudaBindTextureToArray': объявлен deprecate
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(135): warning C4996: 'cudaUnbindTexture': объявлен deprecate
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(171): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(172): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(173): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(198): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(204): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(219): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/bilateral/HPC_BF/HPC_BF/kernel.cu(225): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  utils.cpp
+D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\bilateral\HPC_BF\HPC_BF\utils.cpp(6,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  HPC_BF.vcxproj -> D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\bilateral\HPC_BF\x64\Debug\HPC_BF.exe

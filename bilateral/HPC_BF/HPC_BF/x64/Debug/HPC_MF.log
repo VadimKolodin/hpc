@@ -1,0 +1,81 @@
+﻿  Compiling CUDA source file kernel.cu...
+  
+  D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\HPC_MF>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Programming\Visual Studio 2019\VC\Tools\MSVC\14.29.30133\bin\HostX86\x64" -x cu   -I"D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\HPC_MF\EasyBMP" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2\include"  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\kernel.cu.obj "D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\HPC_MF\kernel.cu" 
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(96): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(102): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(105): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(114): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(118): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(122): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(126): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(133): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(137): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(192): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(196): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(201): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(207): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(219): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(223): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(227): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(233): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(96): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(102): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(105): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(114): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(118): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(122): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(126): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(133): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(137): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(192): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(196): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(201): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(207): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(219): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(223): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(227): warning : conversion from a string literal to "char *" is deprecated
+  
+D:/Vadim/╠рушёЄЁрЄєЁр/ёхьхёЄЁ 1/т√ёюъюяЁюшчтюфшЄхы№э√х т√ўшёыхэш /hpc/median filter/HPC_MF/HPC_MF/kernel.cu(233): warning : conversion from a string literal to "char *" is deprecated
+  
+  kernel.cu
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(72): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(73): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(95): warning C4996: 'cudaBindTextureToArray': объявлен deprecate
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(136): warning C4996: 'cudaUnbindTexture': объявлен deprecate
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(200): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(206): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(226): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+D:/Vadim/Магистратура/семестр 1/высокопроизводительные вычисления/hpc/median filter/HPC_MF/HPC_MF/kernel.cu(232): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  HPC_MF.vcxproj -> D:\Vadim\Магистратура\семестр 1\высокопроизводительные вычисления\hpc\median filter\HPC_MF\x64\Debug\HPC_MF.exe
