@@ -28,13 +28,13 @@
 Для тестирования работы программы была выбрана картинка грибов.
 
 Исходное черно-бело изображение
-![грибы чб](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/mushroom_grayscale.bmp)
+![грибы чб](https://raw.githubusercontent.com/VadimKolodin/hpc/main/bilateral/HPC_BF/HPC_BF/mushromm_grayscale.bmp)
 
 Изображение, отфильтрованное последовательной программой (фильтр 7 х 7)
-![грибы чб отфильрованное cpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/image_filtered_cpu.bmp)
+![грибы чб отфильрованное cpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/bilateral/HPC_BF/HPC_BF/image_filtered_cpu.bmp)
 
 Изображение, отфильтрованное параллельной программой (фильтр 7 х 7)
-![грибы чб отфильрованное gpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/median%20filter/image_filtered_gpu.bmp)
+![грибы чб отфильрованное gpu](https://raw.githubusercontent.com/VadimKolodin/hpc/main/bilateral/HPC_BF/HPC_BF/image_filtered_gpu.bmp)
 
 # Эксперименты 2
 Для проведения экспериментов со сревнением времени выполнения параллельной и последовательных программ была создана функция, которая генерирует изображение с заданными высотой и шириной.
